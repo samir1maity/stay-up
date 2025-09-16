@@ -3,7 +3,7 @@ import userController from '../../controllers/user.ts'
 
 const userRoutes = Router()
 
-userRoutes.post('/', userController.create)
-userRoutes.patch('/', userController.update)
+userRoutes.post('/signup', userController.signup)
+userRoutes.post('/login', userController.login);
 
 export default userRoutes
