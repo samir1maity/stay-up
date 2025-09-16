@@ -1,9 +1,9 @@
 import { Router } from "express";
 import websiteController from '../../controllers/website.ts'
+import authMiddleware from "../../middleware/authMiddleware.ts";
 
 const websiteRoutes = Router()
 
-websiteRoutes.post('/', websiteController.create)
-websiteRoutes.patch('/:websiteId', websiteController.update)
+websiteRoutes.post('/', authMiddleware, websiteController.create)
 
 export default websiteRoutes

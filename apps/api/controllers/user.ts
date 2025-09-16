@@ -10,7 +10,7 @@ async function signup(req: Request, res: Response) {
     const result = userSignup.safeParse(req.body);
 
     if (result.error) {
-      res.status(411).json({
+      res.status(422).json({
         success: false,
         message: "Validation failed in user signup",
       });
@@ -45,7 +45,7 @@ async function login(req: Request, res: Response) {
     const result = userLogin.safeParse(req.body);
 
     if (result.error) {
-      res.status(411).json({
+      res.status(422).json({
         success: false,
         message: "validation failed in login user",
       });
