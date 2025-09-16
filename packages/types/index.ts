@@ -10,3 +10,7 @@ export const userLogin = z.object({
     email: z.email(),
     password: z.string()
 })
+
+export const website = z.object({
+    url: z.string().url("Invalid url")
+})
